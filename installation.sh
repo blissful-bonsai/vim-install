@@ -5,6 +5,7 @@ echo -e "On macOS, git and vim are installed by default.\n"
 echo "Press any key to continue"
 read -n 1 -s
 
+
 function installation(){
     packages="vim git"
     if [ -x "$(command -v apt)" ]; then
@@ -19,7 +20,16 @@ function installation(){
     fi
 }
 
-installation
+kernel_name=$(uname -s)
+function check_os(){
+    if [ "$kernel_name" = "Darwin" ]; then
+        echo "You are running macOS. Chances are, vim and git are already installed!"
+    else
+        installation
+    fi
+}
+
+check_os
 
 # General configuration
 echo "set tabstop=4" >> ~/.vimrc
