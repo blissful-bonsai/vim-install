@@ -6,6 +6,7 @@ echo "Press any key to continue"
 read -n 1 -s
 
 
+# Package installation
 function installation(){
     packages="vim git"
     if [ -x "$(command -v apt)" ]; then
@@ -20,6 +21,7 @@ function installation(){
     fi
 }
 
+# This function checks whether or not the user is running macOS, if so, vim and git are probably already installed
 kernel_name=$(uname -s)
 function check_os(){
     if [ "$kernel_name" = "Darwin" ]; then
@@ -28,7 +30,6 @@ function check_os(){
         installation
     fi
 }
-
 check_os
 
 # General configuration
