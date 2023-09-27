@@ -8,6 +8,7 @@ read -n 1 -s
 
 # Package installation
 function installation(){
+    echo "The installer will ask you to input your password now."
     packages="vim git"
     if [ -x "$(command -v apt)" ]; then
         sudo apt update && sudo apt install $packages
