@@ -1,6 +1,6 @@
 #!/bin/bash
 echo -e "\n"
-echo -e "This script is intended for macOS and Linux distributions that use the apt, dnf, or pacman package managers.\n"
+echo -e "This script is intended for macOS or Linux distributions that use the apt, dnf, or pacman package managers.\n"
 echo -e "On macOS, git and vim are installed by default.\n"
 echo "Press any key to continue"
 read -n 1 -s
