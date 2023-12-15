@@ -9,13 +9,12 @@ read -n 1 -s
 # Package installation
 function installation(){
     echo "The installer will ask you to input your password now."
-    read -p "Please insert the packages you need installed, like vim itself." packages
     if [ -x "$(command -v apt)" ]; then
-        sudo apt update && sudo apt install $packages
+        sudo apt update && sudo apt install vim git
     elif [ -x "$(command -v dnf)" ]; then
-        sudo dnf update && sudo dnf install $packages
+        sudo dnf update && sudo dnf install vim git
     elif [ -x "$(command -v pacman)" ]; then
-        sudo pacman -Syu $packages
+        sudo pacman -Syu vim git
     else
         echo "It seems like this script does not support your distro or operating system."
         exit 1
