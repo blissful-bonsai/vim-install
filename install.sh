@@ -12,7 +12,7 @@ function installation(){
     if [ -x "$(command -v apt)" ]; then
         sudo apt update && sudo apt install vim git
     elif [ -x "$(command -v dnf)" ]; then
-        sudo dnf update && sudo dnf install vim git
+        sudo dnf upgrade && sudo dnf install vim git
     elif [ -x "$(command -v pacman)" ]; then
         sudo pacman -Syu vim git
     else
